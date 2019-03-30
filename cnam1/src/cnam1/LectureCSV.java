@@ -21,7 +21,7 @@ public class LectureCSV {
 				else
 					bitch();
 			}
-			if (count == y.length()-1)
+			if (count == y.length())
 				return y;
 			else {
 				bitch();
@@ -34,6 +34,8 @@ public class LectureCSV {
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
+		String intro = "Entrez vos nom, prénom et date de naissance au format: \"Nom\";\"Prénom\";jj/mm/aaaa";
+		System.out.println(intro);
 		String ligneCSV;
 		Scanner toto = new Scanner(System.in);
 		ligneCSV = toto.nextLine();
