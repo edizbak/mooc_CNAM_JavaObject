@@ -9,7 +9,7 @@ public class LectureCSV {
 		System.exit(0);
 	}
 	
-	static String formatte(String x) {
+	static String formatToNoQuotes(String x) {
 		char delim = '"';
 		int count = 0;
 		if(x.charAt(0) == delim && x.charAt(x.length()-1) == delim) {
@@ -64,8 +64,8 @@ public class LectureCSV {
 //		}
 //		else
 //			bitch();
-		String nom = formatte(nom_untrim);
-		String prenom = formatte(prenom_untrim);
+		String nom = formatToNoQuotes(nom_untrim);
+		String prenom = formatToNoQuotes(prenom_untrim);
 		
 //		if (prenom_untrim.charAt(0) == delim && prenom_untrim.charAt(prenom_untrim.length()) == delim) {
 //			String prenom = prenom_untrim.replace('"', ' ');
