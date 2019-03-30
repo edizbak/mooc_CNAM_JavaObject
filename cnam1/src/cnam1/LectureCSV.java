@@ -4,12 +4,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class LectureCSV {
-	static void bitch() {
+	static void bitch() { // balancer l'erreur
 		System.out.println("Erreur de format");
 		System.exit(0);
 	}
 	
-	static String formatToNoQuotes(String x) {
+	static String formatToNoQuotes(String x) { // on vérifie que la chaîne respecte le format et on vire les guillemets
 		char delim = '"';
 		int count = 0;
 		if(x.charAt(0) == delim && x.charAt(x.length()-1) == delim) {
@@ -36,11 +36,11 @@ public class LectureCSV {
 	public static void main(String[] args) {
 		String intro = "Entrez vos nom, prénom et date de naissance au format: \"Nom\";\"Prénom\";jj/mm/aaaa";
 		System.out.println(intro);
+		
 		String ligneCSV;
 		Scanner toto = new Scanner(System.in);
 		ligneCSV = toto.nextLine();
 		String entrees[] = new String[3];
-		//char delim = '"';
 		String date[] = new String[3];
 		int jour = 0;
 		int mois = 0;
@@ -52,27 +52,12 @@ public class LectureCSV {
 		else
 			bitch();
 		
-		
-		//if (entrees.charAt(entrees.indexOf(entrees[0])) == delim && entrees.charAt([entrees[0].length]) == delim) {
 		String nom_untrim = entrees[0];
 		String prenom_untrim = entrees[1];
 		String date_raw = entrees[2];
 		
-//		if (nom_untrim.charAt(0) == delim && nom_untrim.charAt(nom_untrim.length()) == delim) {
-//			String nom = nom_untrim.replace('"', ' ');
-//			nom = nom.trim();
-//		}
-//		else
-//			bitch();
 		String nom = formatToNoQuotes(nom_untrim);
 		String prenom = formatToNoQuotes(prenom_untrim);
-		
-//		if (prenom_untrim.charAt(0) == delim && prenom_untrim.charAt(prenom_untrim.length()) == delim) {
-//			String prenom = prenom_untrim.replace('"', ' ');
-//			prenom = prenom_untrim.trim();
-//		}
-//		else
-//			bitch();
 		
 		if (date_raw.contains("/") && date_raw.length() == 10) {
 			date = date_raw.split("/");
@@ -112,7 +97,6 @@ public class LectureCSV {
 		System.out.println(nom);
 		System.out.println(prenom);
 		System.out.println(date_naiss);
-		//}
 
 	}
 
