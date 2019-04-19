@@ -15,5 +15,16 @@ public class Carte {
 	
 	public int[] getIndex() {
 		return index;
-	}	
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o == this)
+			return true;
+		if(!(o instanceof Carte))
+			return false;
+		Carte c = (Carte) o;
+		return index[0] == c.index[0] &&
+				index[1] == c.index[1];
+	}
 }
